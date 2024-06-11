@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TabunganQ</title>
+    <!-- Tambahkan link Bootstrap CSS di sini -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS untuk mengatur margin atas pada form */
+        .form-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container form-container">
+    <h2 class="text-center">Catatan Keuangan Hehehe</h2>
+    <form th:action="@{/insert}" th:object="${data}" method="post">
+        <div class="form-group">
+            <label for="payment">Payment:</label>
+            <input type="text" class="form-control" id="payment" th:field="*{payment}" placeholder="Masukkan Payment" style="font-size: 14px;">
+        </div>
+        <div class="form-group">
+            <label for="price">Harga:</label>
+            <input type="number" class="form-control" id="price" th:field="*{price}" placeholder="Masukkan Harga" style="font-size: 14px;">
+        </div>
+        <div class="form-group">
+            <label for="activity">Aktivitas:</label>
+            <input type="text" class="form-control" id="activity" th:field="*{activity}" placeholder="Masukkan Aktivitas" style="font-size: 14px;">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="font-size: 16px;">Simpan</button>
+    </form>
+</div>
+<!-- Tambahkan script Bootstrap di sini jika diperlukan -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
